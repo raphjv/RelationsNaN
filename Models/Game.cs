@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.CodeAnalysis;
 
 namespace RelationsNaN.Models
 {
@@ -11,7 +12,12 @@ namespace RelationsNaN.Models
         public int ReleaseYear { get; set; }
 
         public int? GenreId { get; set; }
+
+
         [ValidateNever]
         public Genre? Genre { get; set; }
+
+        [ValidateNever]
+        public List<Platform> Platforms { get; set; }
     }
 }
